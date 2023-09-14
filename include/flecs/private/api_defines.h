@@ -214,10 +214,10 @@ typedef struct ecs_allocator_t ecs_allocator_t;
 ////////////////////////////////////////////////////////////////////////////////
 
 /** Translate C type to id. */
-#define ecs_id(T) FLECS__E##T
+#define ecs_id(T) FLECS_E##T
 
 /** Translate C type to system function. */
-#define ecs_iter_action(T) FLECS__F##T
+#define ecs_iter_action(T) FLECS_F##T
 
 
 ////////////////////////////////////////////////////////////////////////////////

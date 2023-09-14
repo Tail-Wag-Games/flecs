@@ -46,7 +46,7 @@ This is likely because you're creating a query in a loop. Queries should be crea
 ## Can Flecs be compiled to web assembly?
 Yes it can! See the [quickstart manual](Quickstart.md) for more information.
 
-## Why am I getting an “use of undeclared identifier 'FLECS__E …’” compiler error?
+## Why am I getting an “use of undeclared identifier 'FLECS_E …’” compiler error?
 This happens in C if the variable that holds the component id can't be found. This example shows how to fix it: https://github.com/SanderMertens/flecs/tree/master/examples/c/entities/fwd_declare_component
 
 ## What is the difference between add & set? Why do both exist?

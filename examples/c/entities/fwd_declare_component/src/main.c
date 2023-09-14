@@ -6,7 +6,7 @@
 // component id, but this variable is scoped to the function only. When trying
 // to access the component from another function, this typically causes errors
 // that look like this:
-//   "FLECS__EComponentName" is undefined
+//   "FLECS_EComponentName" is undefined
 //
 // Forward declaring a component will make the component id available from other
 // functions, which fixes this error.
@@ -17,7 +17,7 @@ typedef struct {
 } Position;
 
 // The forward declaration of the component id variable. This variable will have
-// the name FLECS__EPosition, to ensure its name won't conflict with the type.
+// the name FLECS_EPosition, to ensure its name won't conflict with the type.
 ECS_COMPONENT_DECLARE(Position);
 
 // To forward declare entities created with ECS_ENTITY, ECS_TAG or ECS_PREFAB,

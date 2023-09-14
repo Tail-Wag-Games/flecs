@@ -39281,6 +39281,8 @@ void http_recv_connection(
                     reply.code = 200;
                     reply.content_type = NULL;
                     reply.headers = ECS_STRBUF_INIT;
+                    ecs_strbuf_appendlit(&reply.headers, "Cross-Origin-Embedder-Policy: require-corp\r\n");
+                    ecs_strbuf_appendlit(&reply.headers, "Cross-Origin-Opener-Policy: same-origin\r\n");
                     reply.status = "OK";
                     http_send_reply(conn, &reply, true);
                     ecs_os_linc(&ecs_http_request_preflight_count);
@@ -39293,6 +39295,8 @@ void http_recv_connection(
                         reply.code = 200;
                         reply.content_type = NULL;
                         reply.headers = ECS_STRBUF_INIT;
+                        ecs_strbuf_appendlit(&reply.headers, "Cross-Origin-Embedder-Policy: require-corp\r\n");
+                        ecs_strbuf_appendlit(&reply.headers, "Cross-Origin-Opener-Policy: same-origin\r\n");
                         reply.status = "OK";
                         ecs_strbuf_appendstrn(&reply.body, 
                             entry->content, entry->content_length);
@@ -46391,6 +46395,7 @@ ecs_http_server_t *flecs_wasm_rest_server;
 EMSCRIPTEN_KEEPALIVE
 char* flecs_explorer_request(const char *method, char *request) {
     ecs_http_reply_t reply = ECS_HTTP_REPLY_INIT;
+    
     ecs_http_server_request(flecs_wasm_rest_server, method, request, &reply);
     if (reply.code == 200) {
         return ecs_strbuf_get(&reply.body);

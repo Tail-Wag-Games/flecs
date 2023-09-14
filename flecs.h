@@ -708,10 +708,10 @@ typedef struct ecs_allocator_t ecs_allocator_t;
 ////////////////////////////////////////////////////////////////////////////////
 
 /** Translate C type to id. */
-#define ecs_id(T) FLECS__E##T
+#define ecs_id(T) FLECS_E##T
 
 /** Translate C type to system function. */
-#define ecs_iter_action(T) FLECS__F##T
+#define ecs_iter_action(T) FLECS_F##T
 
 
 ////////////////////////////////////////////////////////////////////////////////
@@ -3232,7 +3232,7 @@ extern "C" {
 ////////////////////////////////////////////////////////////////////////////////
 
 /** This allows passing 0 as type to functions that accept ids */
-#define FLECS__E0 0
+#define FLECS_E0 0
 
 FLECS_API
 char* ecs_module_path_from_c(
@@ -14170,7 +14170,7 @@ extern "C" {
 #define ECS_META_COMPONENT(world, name)\
     ECS_COMPONENT_DEFINE(world, name);\
     ecs_meta_from_desc(world, ecs_id(name),\
-        FLECS__##name##_kind, FLECS__##name##_desc)
+        FLECS_##name##_kind, FLECS_##name##_desc)
 
 /** ECS_STRUCT(name, body) */
 #define ECS_STRUCT(name, ...)\
@@ -14216,8 +14216,8 @@ int ecs_meta_from_desc(
 
 #define ECS_STRUCT_IMPL(name, type_desc)\
     extern ECS_COMPONENT_DECLARE(name);\
-    static const char *FLECS__##name##_desc = type_desc;\
-    static ecs_type_kind_t FLECS__##name##_kind = EcsStructType;\
+    static const char *FLECS_##name##_desc = type_desc;\
+    static ecs_type_kind_t FLECS_##name##_kind = EcsStructType;\
     ECS_COMPONENT_DECLARE(name) = 0
 
 #define ECS_STRUCT_DECLARE(name, type_desc)\
@@ -14236,8 +14236,8 @@ int ecs_meta_from_desc(
 
 #define ECS_ENUM_IMPL(name, type_desc)\
     extern ECS_COMPONENT_DECLARE(name);\
-    static const char *FLECS__##name##_desc = type_desc;\
-    static ecs_type_kind_t FLECS__##name##_kind = EcsEnumType;\
+    static const char *FLECS_##name##_desc = type_desc;\
+    static ecs_type_kind_t FLECS_##name##_kind = EcsEnumType;\
     ECS_COMPONENT_DECLARE(name) = 0
 
 #define ECS_ENUM_DECLARE(name, type_desc)\
@@ -14256,8 +14256,8 @@ int ecs_meta_from_desc(
 
 #define ECS_BITMASK_IMPL(name, type_desc)\
     extern ECS_COMPONENT_DECLARE(name);\
-    static const char *FLECS__##name##_desc = type_desc;\
-    static ecs_type_kind_t FLECS__##name##_kind = EcsBitmaskType;\
+    static const char *FLECS_##name##_desc = type_desc;\
+    static ecs_type_kind_t FLECS_##name##_kind = EcsBitmaskType;\
     ECS_COMPONENT_DECLARE(name) = 0
 
 #define ECS_BITMASK_DECLARE(name, type_desc)\

@@ -48,7 +48,7 @@ extern "C" {
 #define ECS_META_COMPONENT(world, name)\
     ECS_COMPONENT_DEFINE(world, name);\
     ecs_meta_from_desc(world, ecs_id(name),\
-        FLECS__##name##_kind, FLECS__##name##_desc)
+        FLECS_##name##_kind, FLECS_##name##_desc)
 
 /** ECS_STRUCT(name, body) */
 #define ECS_STRUCT(name, ...)\
@@ -94,8 +94,8 @@ int ecs_meta_from_desc(
 
 #define ECS_STRUCT_IMPL(name, type_desc)\
     extern ECS_COMPONENT_DECLARE(name);\
-    static const char *FLECS__##name##_desc = type_desc;\
-    static ecs_type_kind_t FLECS__##name##_kind = EcsStructType;\
+    static const char *FLECS_##name##_desc = type_desc;\
+    static ecs_type_kind_t FLECS_##name##_kind = EcsStructType;\
     ECS_COMPONENT_DECLARE(name) = 0
 
 #define ECS_STRUCT_DECLARE(name, type_desc)\
@@ -114,8 +114,8 @@ int ecs_meta_from_desc(
 
 #define ECS_ENUM_IMPL(name, type_desc)\
     extern ECS_COMPONENT_DECLARE(name);\
-    static const char *FLECS__##name##_desc = type_desc;\
-    static ecs_type_kind_t FLECS__##name##_kind = EcsEnumType;\
+    static const char *FLECS_##name##_desc = type_desc;\
+    static ecs_type_kind_t FLECS_##name##_kind = EcsEnumType;\
     ECS_COMPONENT_DECLARE(name) = 0
 
 #define ECS_ENUM_DECLARE(name, type_desc)\
@@ -134,8 +134,8 @@ int ecs_meta_from_desc(
 
 #define ECS_BITMASK_IMPL(name, type_desc)\
     extern ECS_COMPONENT_DECLARE(name);\
-    static const char *FLECS__##name##_desc = type_desc;\
-    static ecs_type_kind_t FLECS__##name##_kind = EcsBitmaskType;\
+    static const char *FLECS_##name##_desc = type_desc;\
+    static ecs_type_kind_t FLECS_##name##_kind = EcsBitmaskType;\
     ECS_COMPONENT_DECLARE(name) = 0
 
 #define ECS_BITMASK_DECLARE(name, type_desc)\

@@ -268,10 +268,10 @@ ecs_entity_t ecs_id(Position) = ecs_component_init(world, &(ecs_component_desc_t
 The first line actually registers the component with Flecs, and captures its name and size. The result is stored in a variable with name `ecs_id(Position)`. Here, `ecs_id` is a macro that translates the typename of the component to a variable name. The actual name of the variable is:
 
 ```c
-FLECS__EPosition
+FLECS_EPosition
 ```
 
-ECS operations that accept a typename, such as `ecs_get` will look for the `FLECS__E` variable:
+ECS operations that accept a typename, such as `ecs_get` will look for the `FLECS_E` variable:
 ```c
 Position *p = ecs_get(world, e, Position);
 ```

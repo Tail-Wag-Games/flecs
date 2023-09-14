@@ -1,0 +1,33 @@
+[submodule "hub/flecs-systems-transform"]
+	path = hub/flecs-systems-transform
+	url = git@github.com:flecs-hub/flecs-systems-transform.git
+[submodule "hub/flecs-components-transform"]
+	path = hub/flecs-components-transform
+	url = git@github.com:flecs-hub/flecs-components-transform.git
+[submodule "hub/flecs-components-graphics"]
+	path = hub/flecs-components-graphics
+	url = git@github.com:flecs-hub/flecs-components-graphics.git
+[submodule "hub/flecs-components-geometry"]
+	path = hub/flecs-components-geometry
+	url = git@github.com:flecs-hub/flecs-components-geometry.git
+[submodule "hub/flecs-components-physics"]
+	path = hub/flecs-components-physics
+	url = git@github.com:flecs-hub/flecs-components-physics.git
+[submodule "hub/flecs-components-gui"]
+	path = hub/flecs-components-gui
+	url = git@github.com:flecs-hub/flecs-components-gui.git
+[submodule "hub/flecs-components-input"]
+	path = hub/flecs-components-input
+	url = git@github.com:flecs-hub/flecs-components-input.git
+[submodule "hub/flecs-systems-physics"]
+	path = hub/flecs-systems-physics
+	url = git@github.com:flecs-hub/flecs-systems-physics.git
+[submodule "hub/flecs-systems-sokol"]
+	path = hub/flecs-systems-sokol
+	url = git@github.com:flecs-hub/flecs-systems-sokol.git
+[submodule "hub/flecs-game"]
+	path = hub/flecs-game
+	url = git@github.com:flecs-hub/flecs-game.git
+[submodule "hub/flecs-components-cglm"]
+	path = hub/flecs-components-cglm
+	url = git@github.com:flecs-hub/flecs-components-cglm.git
